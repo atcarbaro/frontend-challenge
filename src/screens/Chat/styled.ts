@@ -34,6 +34,6 @@ export const ButtonContainer = styled.View`
 
 export const CustomFlatList = styled.FlatList.attrs({
     contentContainerStyle: {
-        paddingBottom: windowHeight * 0.45
+        paddingBottom: windowHeight * 0.48
     }
 })``;

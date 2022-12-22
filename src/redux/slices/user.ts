@@ -9,7 +9,11 @@ export interface UserData {
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    user: {} as UserData,
+    user: {
+      name: '',
+      email: '',
+      password: ''
+    } as UserData,
   },
   reducers: {
     setUserData(state, action: PayloadAction<UserData>) {

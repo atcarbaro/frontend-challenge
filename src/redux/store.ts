@@ -8,9 +8,9 @@ import signIn from './slices/signIn';
 import message from './slices/message';
 
 const persistConfig = {
-  key: 'signIn',
+  key: 'auth',
   storage: AsyncStorage,
-  whitelist: ['signIn', 'message']
+  whitelist: ['signIn', 'message', 'user']
 };
 
 const rootReducer = combineReducers({user, signIn, message});

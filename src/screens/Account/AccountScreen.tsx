@@ -23,7 +23,11 @@ export default function AccountScreen(){
 
   const handleSignOut = () => {
     dispatch(setSignOut());
-    dispatch(setUserData({} as UserData));
+    dispatch(setUserData({
+      name: '',
+      email: '',
+      password: ''
+    } as UserData));
     dispatch(clearMessages());
     persistor.purge();
   };
