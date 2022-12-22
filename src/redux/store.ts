@@ -2,14 +2,18 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit';
 // Or from '@reduxjs/toolkit/query/react'
 import {setupListeners} from '@reduxjs/toolkit/query';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import user from './slices/user';
+import signIn from './slices/signIn';
+import message from './slices/message';
 
 const persistConfig = {
-  key: 'root',
-  storage,
+  key: 'signIn',
+  storage: AsyncStorage,
+  whitelist: ['signIn', 'message']
 };
 
-const rootReducer = combineReducers([]);
+const rootReducer = combineReducers({user, signIn, message});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const preloadedState = {};
